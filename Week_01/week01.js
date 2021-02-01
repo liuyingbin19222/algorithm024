@@ -1,7 +1,7 @@
 /*
  * @Author: 刘颖斌
  * @Date: 2021-01-25 22:37:16
- * @LastEditTime: 2021-01-31 22:02:29
+ * @LastEditTime: 2021-02-01 23:26:00
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \algorithm024\Week_01\week01.js
@@ -175,7 +175,7 @@ const merge = (nums1, m, nums2, n) => {
   }
 
 // 加一 操作:   https://leetcode-cn.com/problems/plus-one/submissions/
-//1. 正常  2. 进一位 3 进多位;
+//1. 正常  2. 进一位 3 进多位; 需要考虑三种情况;
 var plusOne = function(digits) {
     const len = digits.length;
    for(let i = len - 1; i >= 0; i--) {
@@ -188,5 +188,3 @@ var plusOne = function(digits) {
    digits[0] = 1;
    return digits;
 };
-
-  
