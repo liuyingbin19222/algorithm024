@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-01 23:17:41
- * @LastEditTime: 2021-02-06 11:16:51
+ * @LastEditTime: 2021-02-09 10:53:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \algorithm024\Week_02\README.md
@@ -121,6 +121,12 @@ maxHeap.printHeap();
 ```
 
 上面是大根堆的js 实现代码 ， 背下来;
+
+- 分治求解的基本步骤:
+1.terminator , 2: process , 3. drill down (subproblem) 4: merge (合并子问题) 5: reverse state 
+pow(x,n) 的求法是 拆分为subproblem  , 2 ^ 10 ---> 2 ^ 5 * 2^ 5 , 2 ^ 5 -> 2 * 2^2  , 时间复杂度可以
+优化为O(logn); 这里还需要判断是否是奇数 还是偶数 ， 因为奇数的情况需要在乘一个2来达到最终的结果;
+
 
 
 
