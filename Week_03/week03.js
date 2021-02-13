@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-10 07:14:52
- * @LastEditTime: 2021-02-11 09:20:32
+ * @LastEditTime: 2021-02-13 10:28:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \algorithm024\Week_03\week03.js
@@ -183,5 +183,95 @@ const permuteUnique = (nums) => {
   };
   
 
+/**
+ * 贪心算法;
+ * https://leetcode-cn.com/problems/assign-cookies/submissions/
+ * 将孩子和饼干使用降序排序;
+ */
+
+var findContentChildren = function(g, s) {
+    let r = 0, i = g.length, j = s.length
+    g.sort((a, b) => b - a) // 孩子也降序
+    s.sort((a, b) => b - a)
+    while (i--) {
+        if (j === -1) break // 饼干指针到头
+        while (j--) // 排除最小饼干
+            if (s[j] >= g[i]) {
+                r++
+                break
+            }
+    }
+    return r;
+};
+
+/**
+ * 买卖股票的最佳时机;
+ * 使用贪心算法进行求解;
+ * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+ */
+
+function maxProfit(prices) {
+    /**
+     * 单层for循环遍历，只要遇到差价高的情况，就加操作;
+     */
+  let profit = 0;    // 收益
+  for (let i = 1; i < prices.length; i++) {
+    const diff = prices[i] - prices[i - 1]; // 今天和昨天的差价
+    if (diff > 0) {			   // 差价大于0
+      profit += diff;			   // 今天卖掉，赚了今天和昨天的差价
+    }
+  }
+  return profit;
+}
+
+
+ /**
+  * https://leetcode-cn.com/problems/sqrtx/
+  * 平方根函数实现;
+  * 使用二分查找进行实现;
+  */
+ 
+ const mySqrt = function(x) {
+    if (x < 2) return x
+    let left = 1, mid, right = Math.floor(x / 2);
+    while (left <= right) {
+       mid = Math.floor(left + (right - left) / 2)
+       if (mid * mid === x) return mid
+       if (mid * mid < x) {
+           left = mid + 1
+       }else {
+           right = mid - 1
+       }
+    }
+    return right
+}
 
  
+/**
+ * 二分查找return 完全平方数; 思路和上一题求平方的题一致;
+ * https://leetcode-cn.com/problems/valid-perfect-square/
+ */
+
+ /**
+ * @param {number} num
+ * @return {boolean}
+ */
+var isPerfectSquare = function(num) {
+    // 使用二分查找进行实现;
+    if(num === 1 )  return true;
+    let left = 1;
+    let mid;
+    let right = Math.floor(num / 2);
+    while(left <= right) {
+        mid = left + ((right - left ) >> 2);
+        if(mid * mid === num) {
+            return true;
+        }
+        if(mid * mid < num) {
+            left =  mid + 1;
+        }else {
+            right = mid - 1;
+        }
+    }
+    return false;
+};
