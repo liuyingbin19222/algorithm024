@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-15 12:00:44
- * @LastEditTime: 2021-02-20 18:59:28
+ * @LastEditTime: 2021-02-28 08:56:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \algorithm024\Week_04\week04.js
@@ -533,6 +533,3 @@ var jump = function(nums) {
     }
     return stepNum;
 };
-
-
-  
